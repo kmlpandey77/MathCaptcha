@@ -1,0 +1,17 @@
+{
+  "name": "kamal/math-captcha",
+  "description": "Math captcha in PHP",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kamal Pandey",
+      "email": "kml.pandey77@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Captcha\\": "src/Captcha"
+    }
+  },
+  "require": {}
+}
