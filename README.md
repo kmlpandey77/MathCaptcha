@@ -13,6 +13,13 @@ A Simple PHP Math Captcha
 
 ## Usage
 
+```
+composer require kmlpandey77/math-captcha
+
+```
+
+
+
 ### Math in Image
 It will return Math in image
 
