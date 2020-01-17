@@ -1,11 +1,11 @@
 <?php
-namespace Captcha;
+namespace Kmlpandey77\MathCaptcha;
 
 class Captcha {
 
     public $first_num;
     public $second_num;
-    public $operators = array('+', '-', '*');
+    public $operators = array('+', '-');
     public $operator;
     protected $answer;
 
@@ -14,8 +14,8 @@ class Captcha {
             session_start();
         }
 
-        $this->first_num = rand(1, 10);
-        $this->second_num = rand(1, 10);
+        $this->first_num = rand(1, 9);
+        $this->second_num = rand(1, 9);
         $operator = rand(0, count($this->operators) -1);
         $this->operator = $this->operators[$operator];
 
@@ -58,16 +58,34 @@ class Captcha {
 
     public function math()
     {
-        return "{$this->first_num} {$this->operator} {$this->second_num}"; 
+        return "{$this->first_num} {$this->operator} {$this->second_num}";
+    }
+
+    public function image()
+    {
+        $font = __DIR__ . '/font/gothambook.ttf';
+
+        $image = imagecreatetruecolor(80, 25); //Change the numbers to adjust the size of the image
+        $bg = imagecolorallocate($image, 0, 0, 0);
+        $text_color = imagecolorallocate($image, 255, 255, 255);
+
+        imagefilledrectangle($image,0,0,399,99, $text_color);
+        imagettftext ($image, 14, 0, 10, 20, $bg, $font, $this->math() );//Change the numbers to adjust the font-size
+        // var_dump($font, $image);exit;
+
+        header("Content-type: image/png");
+        imagepng( $image );
+
+        // imagedestroy( $image );
     }
 
     function __toString()
     {
-        return $this->math(); 
+        return $this->math();
     }
 
-    
-        
+
+
 }
 
 

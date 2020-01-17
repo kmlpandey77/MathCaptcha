@@ -1,6 +1,6 @@
 {
   "name": "kmlpandey77/math-captcha",
-  "description": "Math captcha in PHP",
+  "description": "A Simple PHP Math Captcha",
   "license": "MIT",
   "authors": [
     {
@@ -10,7 +10,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "kmlpandey77\\MathCaptcha\\": "src/Captcha"
+      "Kmlpandey77\\MathCaptcha\\": "src/"
     }
   },
   "require": {}
