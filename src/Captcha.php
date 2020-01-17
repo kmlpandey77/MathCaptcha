@@ -51,6 +51,9 @@ class Captcha {
 
     public function check()
     {
+        if (session_status() == PHP_SESSION_NONE || session_status() == 1) {
+            session_start();
+        }
         return isset($_POST['captcha']) && isset($_SESSION['anser']) ?
                 ((int) $_POST['captcha'] == $_SESSION['anser'])
                 :false;
