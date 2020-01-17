@@ -27,6 +27,7 @@ Create `captcha.php`
 
 ```php
 <?php
+session_start();
 require_once 'vendor/autoload.php'; // link to vendor's autoload.php
 
 use Kmlpandey77\MathCaptcha\Captcha;
@@ -54,6 +55,7 @@ Create `form.php`
 Place this code to top of `form.php`
 ```php
 <?php
+session_start();
 require_once 'vendor/autoload.php'; // link to vendor's autoload.php
 
 use Kmlpandey77\MathCaptcha\Captcha;
@@ -77,7 +79,8 @@ Checks to see if the user entered the correct captcha key
 Create `check.php`
 
 ```php
-
+<?php
+session_start();
 require_once 'vendor/autoload.php'; // link to vendor's autoload.php
 use Kmlpandey77\MathCaptcha\Captcha;
 
