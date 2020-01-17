@@ -5,10 +5,10 @@ A Simple PHP Math Captcha
 
 ## Preview
 ### Math in Image
-![A Simple PHP Math Captcha](https://raw.githubusercontent.com/kmlpandey77/bootnavbar/master/PreviewImage.png "Captcha Preview")
+![A Simple PHP Math Captcha](https://raw.githubusercontent.com/kmlpandey77/MathCaptcha/master/PreviewImage.png "Captcha Preview")
 
 ### Math in Text
-![A Simple PHP Math Captcha](https://raw.githubusercontent.com/kmlpandey77/bootnavbar/master/PreviewText.png "Captcha Preview")
+![A Simple PHP Math Captcha](https://raw.githubusercontent.com/kmlpandey77/MathCaptcha/master/PreviewText.png "Captcha Preview")
 
 
 ## Usage
