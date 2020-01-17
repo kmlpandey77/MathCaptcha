@@ -39,40 +39,21 @@ Create `form.php`
 </form>
 ```
 
-
-Create `check.php`
-
-```php
-
-require_once '../vendor/autoload.php';
-use Kmlpandey77\MathCaptcha\Captcha;
-
-if(isset($_POST['submit'])){
-
-	if(Captcha::check()){
-
-        //valid action
-
-        echo('<font color="green">Answer is valid</font>');
-	}else{
-		echo('<font color="red">Answer is invalid</font>');
-	}
-}
-```
-
-
 ### Math in Text
 It will return Math in text
 
 Create `form.php`
 
+Place this code to top of `form.php`
 ```php
+<?php
 require_once '../vendor/autoload.php';
 
 use Kmlpandey77\MathCaptcha\Captcha;
-
+?>
 ```
 
+And place this code in `body`
 ```html
 <form action="check.php" method="post">
     <p>
@@ -83,6 +64,9 @@ use Kmlpandey77\MathCaptcha\Captcha;
 ```
 
 
+### Check
+Checks to see if the user entered the correct captcha key
+
 Create `check.php`
 
 ```php
@@ -93,10 +77,10 @@ use Kmlpandey77\MathCaptcha\Captcha;
 if(isset($_POST['submit'])){
 
 	if(Captcha::check()){
-        echo('<font color="green">Answer is valid</font>');
 
         //valid action
 
+        echo('<font color="green">Answer is valid</font>');
 	}else{
 		echo('<font color="red">Answer is invalid</font>');
 	}
