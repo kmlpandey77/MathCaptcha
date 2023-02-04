@@ -29,7 +29,7 @@ class Captcha {
         $this->calculater();
     }
 
-    protected function calculater()
+    protected function calculate()
     {
         switch($this->operator){
             case '*':
@@ -46,7 +46,7 @@ class Captcha {
 
         }
 
-        $_SESSION['anser'] = $this->answer;
+        $_SESSION['answer'] = $this->answer;
     }
 
     public function check()
@@ -54,9 +54,9 @@ class Captcha {
         if (session_status() == PHP_SESSION_NONE || session_status() == 1) {
             session_start();
         }
-        return isset($_POST['captcha']) && isset($_SESSION['anser']) ?
-                ((int) $_POST['captcha'] == $_SESSION['anser'])
-                :false;
+        
+        return isset($_POST['captcha'], $_SESSION['answer'])
+            && (int) $_POST['captcha'] === $_SESSION['answer'];
     }
 
     public function math()
@@ -78,8 +78,6 @@ class Captcha {
 
         header("Content-type: image/png");
         imagepng( $image );
-
-        // imagedestroy( $image );
     }
 
     function __toString()
