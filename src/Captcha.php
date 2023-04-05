@@ -26,7 +26,7 @@ class Captcha {
             $this->first_num = $first;
         }
 
-        $this->calculater();
+        $this->calculate();
     }
 
     protected function calculate()
