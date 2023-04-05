@@ -49,7 +49,7 @@ class Captcha {
         $_SESSION['answer'] = $this->answer;
     }
 
-    public function check()
+    public static function check()
     {
         if (session_status() == PHP_SESSION_NONE || session_status() == 1) {
             session_start();
